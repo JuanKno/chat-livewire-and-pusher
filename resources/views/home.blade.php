@@ -45,13 +45,6 @@
 @section('content')
 
 <div class="container px-4">
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-  <strong>Hecho!</strong> Se ha enviado el mensaje
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-
     <div class="row rounded-lg overflow-hidden shadow">
         <div class="col-12 px-0">
             <div class="px-4 py-5 chat-box bg-white">

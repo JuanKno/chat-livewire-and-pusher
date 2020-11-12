@@ -18,7 +18,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @stack('styles')
-
+    <script src="{{ asset('js/app.js') }}"></script>
     @livewireStyles
 
 </head>
@@ -80,10 +80,10 @@
         </main>
     </div>
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    @stack('scripts')
 
     @livewireScripts
+    @stack('scripts')
+
 
 </body>
 

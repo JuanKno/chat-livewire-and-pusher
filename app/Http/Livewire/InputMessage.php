@@ -11,7 +11,7 @@ class InputMessage extends Component
     public $message;
 
 
-    public function mounted()
+    public function mount()
     {
         $this->user = Auth::user();
         $this->message = "";
@@ -24,6 +24,6 @@ class InputMessage extends Component
 
     public function enviarMensaje()
     {
-        $this->emit("mensaje enviado");
+        $this->emit("mensajeEnviado");
     }
 }
