@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Events\EnviarMensaje;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -13,7 +14,7 @@ class InputMessage extends Component
 
     public function mount()
     {
-        $this->user = Auth::user();
+        $this->user = Auth::user()->name;
         $this->message = "";
     }
 
@@ -25,6 +26,12 @@ class InputMessage extends Component
     public function enviarMensaje()
     {
         $this->emit("mostrarAlertaMensaje");
-        $this->emit("mostrarMensajes", $this->message);
+        $datos = [
+            'user' => $this->user,
+            'message' => $this->message,
+        ];
+        // $this->emit("mostrarMensajes", $datos);
+        event(new EnviarMensaje($this->user, $this->message));
+        $this->message = "";
     }
 }
