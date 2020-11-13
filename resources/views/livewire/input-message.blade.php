@@ -17,7 +17,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
-            window.livewire.on('mensajeEnviado', function() {
+            window.livewire.on('mostrarAlertaMensaje', function() {
                 $('#btn-message').removeClass('d-none');
                 setTimeout(() => {
                     $('#btn-message').addClass('d-none');

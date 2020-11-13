@@ -24,6 +24,7 @@ class InputMessage extends Component
 
     public function enviarMensaje()
     {
-        $this->emit("mensajeEnviado");
+        $this->emit("mostrarAlertaMensaje");
+        $this->emit("mostrarMensajes", $this->message);
     }
 }
