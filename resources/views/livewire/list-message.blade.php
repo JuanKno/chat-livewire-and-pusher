@@ -1,4 +1,5 @@
 <div>
+
     <div class="px-4 py-5 chat-box bg-white">
 
         @foreach($messages as $message)

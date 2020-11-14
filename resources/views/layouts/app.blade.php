@@ -56,6 +56,20 @@
                         @endif
                         @else
                         <li class="nav-item dropdown">
+                            <a id="usersDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Usuarios
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="usersDropdown">
+                                @forelse($users as $user)
+                                <a class="dropdown-item" href="{{ route('home', $user->id) }}">
+                                    {{ $user->name }}
+                                </a>
+                                @empty
+                                @endforelse
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
