@@ -15,6 +15,7 @@ class UserTableSeeder extends Seeder
         User::create([
             'name' => 'Prueba1',
             'email' => 'prueba1@prueba.com',
+            'role' => 'admin',
             'email_verified_at' => now(),
             'password' => bcrypt('123456'), // password
             'remember_token' => Str::random(10),
@@ -23,6 +24,7 @@ class UserTableSeeder extends Seeder
         User::create([
             'name' => 'Prueba2',
             'email' => 'prueba2@prueba.com',
+            'role' => 'user',
             'email_verified_at' => now(),
             'password' => bcrypt('123456'), // password
             'remember_token' => Str::random(10),
