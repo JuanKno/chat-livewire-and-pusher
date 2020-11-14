@@ -52,7 +52,7 @@
             @livewire('list-message')
 
             <!-- Typing area -->
-            @livewire('input-message')
+            @livewire('input-message', ['to' => $user])
 
         </div>
     </div>

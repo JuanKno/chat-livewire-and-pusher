@@ -15,11 +15,12 @@ class EnviarMensaje implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $message, $user;
+    public $message, $from, $to;
 
-    public function __construct($user, $message)
+    public function __construct($from, $to, $message)
     {
-        $this->user = $user;
+        $this->from = $from;
+        $this->to = $to;
         $this->message = $message;
     }
 

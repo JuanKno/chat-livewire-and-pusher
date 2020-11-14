@@ -25,6 +25,12 @@ class HomeController extends Controller
      */
     public function index(User $user)
     {
-        return view('home', ['users' => User::all()->except(Auth::user()->id)]);
+        return view(
+            'home',
+            [
+                'users' => User::all()->except(Auth::user()->id),
+                'user' => $user
+            ]
+        );
     }
 }

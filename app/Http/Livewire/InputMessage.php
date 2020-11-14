@@ -8,14 +8,14 @@ use Livewire\Component;
 
 class InputMessage extends Component
 {
-    public $user;
-    public $message;
+    public $from, $message, $to;
 
 
-    public function mount()
+    public function mount($to)
     {
-        $this->user = Auth::user()->name;
+        $this->from = Auth::user()->name;
         $this->message = "";
+        $this->to = $to->name;
     }
 
     public function render()
@@ -27,11 +27,12 @@ class InputMessage extends Component
     {
         $this->emit("mostrarAlertaMensaje");
         $datos = [
-            'user' => $this->user,
+            'from' => $this->from,
+            'to' => $this->to,
             'message' => $this->message,
         ];
         // $this->emit("mostrarMensajes", $datos);
-        event(new EnviarMensaje($this->user, $this->message));
+        event(new EnviarMensaje($this->from, $this->to, $this->message));
         $this->message = "";
     }
 }
